@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SamGil_Lab4" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="MovieView" customModule="SamGil_Lab4" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="LNd-2t-BnW">
+                                <rect key="frame" x="0.0" y="733" width="393" height="85"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="odx-TF-cV5">
+                                        <rect key="frame" x="0.0" y="0.0" width="196.66666666666666" height="85"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Movies"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cuu-wd-Mu0">
+                                        <rect key="frame" x="196.66666666666663" y="0.0" width="196.33333333333337" height="85"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Favorites"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="Ecd-RT-mwq"/>
+                                </constraints>
+                            </stackView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qiQ-At-EYS">
+                                <rect key="frame" x="0.0" y="165" width="393" height="568"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9Pf-kA-X05">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movies" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qHV-OC-g3B">
+                                <rect key="frame" x="0.0" y="59" width="393" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="9qI-iz-fUR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="6jb-cm-Ufg">
+                                <rect key="frame" x="0.0" y="109" width="393" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="xyY-oL-SYN"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qHV-OC-g3B" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="2iB-ap-35l"/>
+                            <constraint firstItem="qiQ-At-EYS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4pY-3P-eGQ"/>
+                            <constraint firstItem="qHV-OC-g3B" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="FsL-Jd-W8k"/>
+                            <constraint firstItem="LNd-2t-BnW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="M7t-kY-d2y"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LNd-2t-BnW" secondAttribute="bottom" id="QG9-Sy-Bbg"/>
+                            <constraint firstItem="LNd-2t-BnW" firstAttribute="top" secondItem="qiQ-At-EYS" secondAttribute="bottom" id="R58-Cb-e2S"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LNd-2t-BnW" secondAttribute="trailing" id="RFo-ZT-PM8"/>
+                            <constraint firstAttribute="trailing" secondItem="qHV-OC-g3B" secondAttribute="trailing" id="SnN-eu-6HT"/>
+                            <constraint firstItem="6jb-cm-Ufg" firstAttribute="top" secondItem="qHV-OC-g3B" secondAttribute="bottom" id="UdN-Hz-2mH"/>
+                            <constraint firstItem="6jb-cm-Ufg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ffi-9m-x5j"/>
+                            <constraint firstItem="qiQ-At-EYS" firstAttribute="top" secondItem="6jb-cm-Ufg" secondAttribute="bottom" id="ggD-Lh-Gmf"/>
+                            <constraint firstItem="6jb-cm-Ufg" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="hRh-9s-byS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qiQ-At-EYS" secondAttribute="trailing" id="ogB-It-2Fh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="currentViewLabel" destination="qHV-OC-g3B" id="E15-JW-7WO"/>
+                        <outlet property="favoriteViewButton" destination="Cuu-wd-Mu0" id="sBC-Kc-7Ur"/>
+                        <outlet property="movieViewButton" destination="odx-TF-cV5" id="HwI-9a-z9F"/>
+                        <outlet property="movies" destination="qiQ-At-EYS" id="Au8-As-wTH"/>
+                        <outlet property="searchBar" destination="6jb-cm-Ufg" id="yp5-xA-RfS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="101.5267175572519" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
